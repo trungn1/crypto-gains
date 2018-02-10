@@ -18,7 +18,9 @@ class Coin:
         self.now_price = self._get_price() 
         self.status_usd = self.now_price * self.quantity
         self.start_price_usd = self._convert_usd(self.buy_currency)
-        
+
+    def __repr__(self):
+        return "This is a {} coin".format(self.name)
 
     def _get_price(self):
         new_price = float(self.online_result['price_usd'])
